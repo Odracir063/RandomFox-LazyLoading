@@ -1,7 +1,7 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import { registerImage } from "./lazy";
+
+let imageAddedCount = 0;
+let imageLoadedCount = 0;
 
 
 const createImageNode = () => {
@@ -25,6 +25,9 @@ const addImageNode = () => {
     const newImage = createImageNode();
     const mountNode = document.querySelector('#images')
     mountNode.appendChild(newImage);
+    imageAddedCount++;
+    console.log(`⚪Ganerated Images: ${imageAddedCount}`);
+    registerImage(newImage);
 }
 
 
