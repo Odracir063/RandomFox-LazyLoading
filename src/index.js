@@ -1,12 +1,10 @@
 import { registerImage } from "./lazy";
 
 let imageAddedCount = 0;
-let imageLoadedCount = 0;
-
 
 const createImageNode = () => {
 
-    const random = Math.floor(Math.random() * 123) ;
+    const random = Math.floor(Math.random() * 122) + 1;
 
     const container = document.createElement('div')
     container.className = 'p-4';
@@ -14,7 +12,7 @@ const createImageNode = () => {
     const image = document.createElement('img');
     image.className = "mx-auto";
     image.width = '320'
-    image.src = `https://randomfox.ca/images/${random}.jpg`;
+    image.dataset.src = `https://randomfox.ca/images/${random}.jpg`;
 
     container.appendChild(image);
 
